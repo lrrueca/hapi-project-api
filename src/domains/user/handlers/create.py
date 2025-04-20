@@ -1,7 +1,7 @@
 import bcrypt
 from asyncpg.pgproto.pgproto import UUID
 from tortoise.contrib.pydantic import PydanticModel
-from ..models import User, user_create_model
+from ..models import User, user_write_model
 
 
 async def create_user_handler(data: dict) -> UUID:
@@ -27,10 +27,10 @@ async def create_user_handler(data: dict) -> UUID:
     }
 
     # Remove the password key from the user data
-    __data: dict = {key: value for key, value in _data.items() if key != "password"}
+    _data.pop("password")  # remove the original password key
 
     # Validate and transform the user data
-    pm: PydanticModel = user_create_model.model_validate(__data)
+    pm: PydanticModel = user_write_model.model_validate(_data)
 
     entity: User = User(**pm.model_dump())
     await entity.save()
