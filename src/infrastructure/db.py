@@ -12,7 +12,7 @@ config = {
     },
     "apps": {
         "models": {
-            "models": ["src.infrastructure.models", "aerich.models"],
+            "models": ["aerich.models"],
             "default_connection": "default",
         }
     },
