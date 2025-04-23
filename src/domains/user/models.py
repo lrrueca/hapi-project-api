@@ -1,5 +1,5 @@
 from tortoise.contrib.pydantic import PydanticListModel, PydanticModel, pydantic_queryset_creator, pydantic_model_creator
-from ...infrastructure.models import User
+from ...infrastructure.models.user import User
 
 
 user_read_list_model: type[PydanticListModel] = pydantic_queryset_creator(User, exclude=("created_at", "modified_at"))
