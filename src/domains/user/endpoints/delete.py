@@ -22,7 +22,6 @@ async def delete_user_endpoint(request: Request) -> JSONResponse:
 
         return JSONResponse(
             status_code=HTTP_200_OK,
-            # content={"message": "debugging"},
             content={"message": "User deleted successfully"},
         )
 
