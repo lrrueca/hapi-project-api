@@ -1,0 +1,36 @@
+@baseUrl = http://localhost:8000/api
+
+### get list
+GET {{baseUrl}}/account_types
+Accept: application/json
+
+### get by id
+GET {{baseUrl}}/account_types/7
+Accept: application/json
+
+### create
+POST {{baseUrl}}/account_types
+Content-Type: application/json
+Accept: application/json
+
+{
+    "data": {
+        "name": "supplier"
+    }
+}
+
+### update
+PUT {{baseUrl}}/account_types/8
+Content-Type: application/json
+Accept: application/json
+
+{
+    "data": {
+        "name": "reseller"
+    }
+}
+
+
+### delete
+DELETE {{baseUrl}}/account_types/10
+Accept: application/json
