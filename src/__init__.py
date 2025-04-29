@@ -13,7 +13,7 @@ async def homepage(request):
 routes = [
     Route("/api", endpoint=homepage),
     Mount("/api/users", routes=user_routes),
-    Mount("/api", routes=user_routes),  # Mounting user routes
+    Mount("/api/account_types", routes=account_type_routes),
 ]
 
 app = Starlette(debug=True, lifespan=lifespan, routes=routes)
