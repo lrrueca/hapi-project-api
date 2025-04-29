@@ -12,7 +12,7 @@ async def homepage(request):
 
 routes = [
     Route("/api", endpoint=homepage),
-    Mount("/api", routes=account_type_routes),  # Mounting account type routes
+    Mount("/api/users", routes=user_routes),
     Mount("/api", routes=user_routes),  # Mounting user routes
 ]
 
