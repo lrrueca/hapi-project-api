@@ -30,3 +30,8 @@ cmd = ["python", "server.py"]
 tortoise_orm = "src.infrastructure.db.config"
 location = "./migrations"
 src_folder = "./."
+
+[dependency-groups]
+dev = [
+    "faker>=37.1.0",
+]

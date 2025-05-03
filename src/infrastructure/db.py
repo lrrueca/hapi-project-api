@@ -14,8 +14,7 @@ config = {
         "models": {
             "models": [
                 "aerich.models",
-                "src.infrastructure.models.user",
-                "src.infrastructure.models.account",
+                "src.infrastructure.models",
             ],
             "default_connection": "default",
         }
